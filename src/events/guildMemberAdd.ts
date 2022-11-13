@@ -7,7 +7,8 @@ export default {
         const channel = member.client.channels.cache.get('970383430971953152')!;
         let memberCount = member.guild.memberCount.toString();
 
-        if (memberCount.endsWith('1')) memberCount += 'st';
+        if (memberCount.endsWith('11') || memberCount.endsWith('12') || memberCount.endsWith('13')) memberCount += 'th';
+        else if (memberCount.endsWith('1')) memberCount += 'st';
         else if (memberCount.endsWith('2')) memberCount += 'nd';
         else if (memberCount.endsWith('3')) memberCount += 'rd';
         else memberCount += 'th'
