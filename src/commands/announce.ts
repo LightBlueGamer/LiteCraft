@@ -11,7 +11,7 @@ import {
 } from "discord.js";
 
 export default {
-    devMode: true,
+    devMode: false,
     data: new SlashCommandBuilder()
         .setName("announce")
         .setDescription("Sends a announcement message to the channel.")
