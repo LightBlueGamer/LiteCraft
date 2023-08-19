@@ -8,6 +8,7 @@ import {
     TextInputStyle,
     ActionRowBuilder,
     type ModalActionRowComponentBuilder,
+    PermissionFlagsBits,
 } from "discord.js";
 
 export default {
@@ -16,6 +17,7 @@ export default {
         .setName("announce")
         .setDescription("Sends a announcement message to the channel.")
         .setDMPermission(false)
+        .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
         .toJSON(),
     async execute(interaction: ChatInputCommandInteraction) {
         const modal = new ModalBuilder()
