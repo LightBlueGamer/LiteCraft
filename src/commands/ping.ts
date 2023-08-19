@@ -1,11 +1,14 @@
-import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
-import prettyMilliseconds from 'pretty-ms';
+/** @format */
+
+import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
+import prettyMilliseconds from "pretty-ms";
 
 export default {
+    devMode: false,
     data: new SlashCommandBuilder()
-        .setName('ping')
-        .setDescription('Checks bot ping.')
-        .setDMPermission(false)
+        .setName("ping")
+        .setDescription("Checks bot ping.")
+        .setDMPermission(true)
         .toJSON(),
     async execute(interaction: ChatInputCommandInteraction) {
         await interaction.deferReply();
@@ -13,10 +16,12 @@ export default {
             content: `Pinging...`,
         });
 
-        return interaction.editReply({
-            content: `Bot Latency: ${prettyMilliseconds(action.createdTimestamp - interaction.createdTimestamp)}\nAPI Latency: ${prettyMilliseconds(
-                interaction.client.ws.ping,
-            )}`,
-        });
+        const botLatency = prettyMilliseconds(
+            action.createdTimestamp - interaction.createdTimestamp
+        );
+        const apiLatency = prettyMilliseconds(interaction.client.ws.ping);
+        const content = `Bot Latency: ${botLatency}\nAPI Latency: ${apiLatency}`;
+
+        return interaction.editReply({ content });
     },
 };

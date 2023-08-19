@@ -1,9 +1,13 @@
+/** @format */
+
 import type { Client } from "discord.js";
+import { log } from "../utils/logger.js";
 
 export default {
-    name: 'ready',
+    name: "ready",
     once: true,
     async execute(client: Client) {
-        console.log(`Bot is running as ${client.user!.username}.`)
-    }
-}
+        if (!client.user) return console.error(`No client user was found.`);
+        log(`Bot is running as ${client.user.username}.`);
+    },
+};

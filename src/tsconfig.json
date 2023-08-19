@@ -1,17 +1,14 @@
 {
-    "extends": "../tsconfig.base.json",
-    "compilerOptions": {
-        "importHelpers": true,
-        "noEmitHelpers": true,
-        "target": "esnext",
-        "module": "esnext",
-        "sourceMap": true,
-        "outDir": "../dist",
-        "moduleResolution": "node",
-        "allowJs": true,
-        "skipLibCheck": true
-    },
-    "include": [
-        ".",
-    ]
+  "extends": "@sapphire/ts-config",
+  "compilerOptions": {
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "target": "esnext",
+    "module": "esnext",
+    "sourceMap": true,
+    "outDir": "../dist",
+    "moduleResolution": "node",
+    "skipLibCheck": true
+  },
+  "include": ["."]
 }

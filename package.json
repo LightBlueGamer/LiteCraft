@@ -1,23 +1,24 @@
 {
   "name": "litecraft",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "scripts": {
-    "run": "node --es-module-specifier-resolution=node dist/index.js",
-    "deploy": "node --es-module-specifier-resolution=node dist/deploy.js"
+    "start": "node --es-module-specifier-resolution=node dist/index.js",
+    "deploy": "node --es-module-specifier-resolution=node dist/deploy.js",
+    "compile": "tsc --build --verbose src"
   },
   "keywords": [],
   "author": "Tim",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@discordjs/rest": "^1.1.0",
-    "discord.js": "^14.3.0",
-    "dotenv": "^16.0.1",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "mongodb": "^5.7.0",
     "pretty-ms": "^8.0.0"
   },
   "devDependencies": {
-    "@sapphire/ts-config": "^3.3.4"
-  }
+    "@sapphire/ts-config": "^4.0.1"
+  },
+  "description": ""
 }
